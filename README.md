@@ -53,7 +53,7 @@ This allows you to:
 
 ### Data Preparation: Single Column Profiling
 - **part1: Cardinalities** – Number of rows, nulls, distinct values, uniqueness
-- **part2: Value Distribution** – Histogram plots for numerical features
+- **part2: Value Distribution** – Histogram plots for numerical & categorical features
 - **Similarity Metrics**:
   - Levenshtein distance
   - Levenshtein ratio
