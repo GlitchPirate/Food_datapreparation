@@ -28,7 +28,7 @@ To use your own data:
 - **Modify the file paths** at the **beginning of the notebook**, e.g.:
 
 ```python
-data_path = "/content/drive/MyDrive/your_folder/your_fd_result.json"
+data_path = "/content/drive/MyDrive/your_folder/your_fd_result.csv"
 ```
 
 - Replace only the path variables — no need to change the logic of the modules.
@@ -38,7 +38,7 @@ data_path = "/content/drive/MyDrive/your_folder/your_fd_result.json"
 ### 3. Run by Module
 
 Since this notebook is modularized by section headings, you can:
-- **Click on the Markdown title** of any analysis section (e.g., `## Step 2: FD Visualization`)
+- **Click on the Markdown title** of any analysis section (e.g., `## Association Rule`)
 - **Run all cells under that section** directly by pressing **Shift+Enter**, or using the “Run” dropdown → “Run selected cell and below”
 
 This allows you to:
@@ -49,15 +49,51 @@ This allows you to:
 
 ## Notebook Structure
 
-| Section Title                     | Functionality                              |
-|----------------------------------|--------------------------------------------|
-| **Step 1: Load and Preprocess**      | Reads FD data from path                    |
-| **Step 2: Field Frequency**          | Plots bar chart of field usage             |
-| **Step 3: FD Network Graph**         | Visualizes FD connections using networkx   |
-| **Step 4: Importance Scoring**       | Ranks FDs by strength or consistency       |
-| **Step 5: Heatmap + Redundancy**     | Shows pairwise field dependencies          |
-| **Step 6: Confidence & Complexity**  | Analyzes simplicity vs reliability of FDs  |
+### Data Preparation: Single Column Profiling
+- **part1: Cardinalities** – Number of rows, nulls, distinct values, uniqueness
+- **part2: Value Distribution** – Histogram plots for numerical features
+- **Similarity Metrics**:
+  - Levenshtein distance
+  - Levenshtein ratio
+  - Weighted Dice
+  - Dice
+  - `thefuzz`-based string matching
 
+---
+
+### Association Rule
+- **Top 10 Association Rules**
+- **Association Rule Network Graph**
+- **Top 10 Rules with Support, Confidence, Leverage, and Conviction**
+- **Word Cloud of Most Frequent Items**
+- **KMeans Clustering of Rules**
+
+---
+
+### Multi-column FD & Primary Key Detection
+
+#### Visualisation
+- Heatmap of FD relationships
+- FD network graph
+- Barplot of top FD scores
+- Confidence vs Coverage scatter plot
+- FD source field frequency barplot
+
+#### Checkpoint & Result
+- Checkpoint loading / saving
+- Main analysis functions
+
+---
+
+### FD & IND Discovery (`fd_ind` Section)
+- Find exact FDs
+- Find approximate FDs (e.g., error rate = 0.05)
+- Find exact INDs
+- Find approximate INDs (e.g., error rate = 0.2)
+- Inclusion Dependencies with Threshold 0.2
+- Main analysis function
+
+---
 ---
 
 ## Notes
