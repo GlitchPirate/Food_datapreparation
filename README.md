@@ -15,6 +15,8 @@ This Jupyter Notebook performs group-based analysis on functional dependencies (
   - `pandas`
   - `matplotlib`
   - `networkx`
+  - `mlxtend`
+  - `desbordante`
   - `seaborn` (optional for styling)
   - `os`, `json`, `collections`, etc.
 
@@ -56,18 +58,15 @@ This allows you to:
   - Levenshtein distance
   - Levenshtein ratio
   - Weighted Dice
-  - Dice
-  - `thefuzz`-based string matching
 
 ---
 
 ### Association Rule
 - **Top 10 Association Rules**
 - **Association Rule Network Graph**
-- **Top 10 Rules with Support, Confidence, Leverage, and Conviction**
-- **Word Cloud of Most Frequent Items**
-- **KMeans Clustering of Rules**
-
+- **Comparison of Support, Confidence, Leverage, and Conviction for Top Rules**
+- **Association Rule Clustering Visualization (Support vs Lift)**
+- **4D Association Rule Visualization: Support, Lift, Leverage, and Conviction**
 ---
 
 ### Multi-column FD & Primary Key Detection
